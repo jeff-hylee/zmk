@@ -41,11 +41,6 @@
         };
     };
 
-    &caps_word {
-        continue-list = <UNDERSCORE MINUS>;
-        mods = <(MOD_LSFT | MOD_RSFT)>;
-    };
-
     keymap {
         compatible = "zmk,keymap";
         colemak_layer {
