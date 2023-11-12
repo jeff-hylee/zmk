@@ -20,6 +20,11 @@
 #define ________________________RALT________________________ &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
 #define ________________________LALT________________________ &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp SQT
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+    mods = <(MOD_LSFT | MOD_RSFT)>;
+};
+
 / {
     behaviors {
         hm: homerow_mods {
@@ -31,11 +36,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-    };
-
-    &caps_word {
-        continue-list = <UNDERSCORE MINUS>;
-        mods = <(MOD_LSFT | MOD_RSFT)>;
     };
 
     conditional_layers {
