@@ -18,8 +18,8 @@
 
 #define ____________________TRANSPARENT_____________________ &trans  &trans  &trans  &trans  &trans
 #define __________________TR_TRANSPARENT____________________ &kp ESC  &trans  &trans  &trans  &trans
-#define ________________________RALT________________________ &trans  &smart_rshft  &kp RCTRL  &kp RALT  &kp RGUI
-#define ________________________LALT________________________ &kp LGUI  &kp LALT  &kp LCTRL  &smart_lshft  &trans
+#define ________________________RALT________________________ &trans  &caps_word  &kp RCTRL  &kp RALT  &kp RGUI
+#define ________________________LALT________________________ &kp LGUI  &kp LALT  &kp LCTRL  &caps_word  &trans
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
@@ -35,20 +35,6 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-        };
-        smart_rshft: smart_rshift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SMART_RIGHT_SHIFT";
-            #binding-cells = <0>;
-            bindings = <&kp RSHFT>, <&caps_word>;
-            mods = <(MOD_LSFT)>;
-        };
-        smart_lshft: smart_lshift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SMART_LEFT_SHIFT";
-            #binding-cells = <0>;
-            bindings = <&kp LSHFT>, <&caps_word>;
-            mods = <(MOD_RSFT)>;
         };
     };
 
