@@ -36,6 +36,13 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        smart_lshft: smart_lshift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SMART_LEFT_SHIFT";
+            #binding-cells = <0>;
+            bindings = <&kp LSHFT>, <&caps_word>;
+            mods = <(MOD_RSFT)>;
+        };
     };
 
     conditional_layers {
