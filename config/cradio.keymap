@@ -17,6 +17,7 @@
 #define HRMR(k1,k2,k3,k4) &hm RSHFT k1  &hm RCTRL k2  &hm RALT k3  &hm RGUI k4
 
 #define ____________________TRANSPARENT_____________________ &trans  &trans  &trans  &trans  &trans
+#define __________________TR_TRANSPARENT____________________ &kp ESC  &trans  &trans  &trans  &trans
 #define ________________________RALT________________________ &trans  &smart_rshft  &kp RCTRL  &kp RALT  &kp RGUI
 #define ________________________LALT________________________ &kp LGUI  &kp LALT  &kp LCTRL  &smart_lshft  &trans
 
@@ -99,7 +100,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │  -       │  7       │  8       │  9       │  \ |     │
-            ____________________TRANSPARENT_____________________       &kp MINUS  &kp N7     &kp N8     &kp N9     &kp BSLH
+            __________________TR_TRANSPARENT____________________       &kp MINUS  &kp N7     &kp N8     &kp N9     &kp BSLH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  = +     │  4       │  5       │  6       │  '       │
             ________________________LALT________________________       &kp EQUAL  &kp N4     &kp N5     &kp N6     &kp SQT
@@ -134,7 +135,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │  INSERT  │  PREV    │  PLAY    │  NEXT    │  VOL UP  │
-            ____________________TRANSPARENT_____________________       &kp INS   &kp C_PREV  &kp C_PP  &kp C_NEXT &kp C_VOL_UP
+            __________________TR_TRANSPARENT____________________       &kp INS   &kp C_PREV  &kp C_PP  &kp C_NEXT &kp C_VOL_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │  VOL DOWN│
             ________________________LALT________________________       &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT &kp C_VOL_DN
