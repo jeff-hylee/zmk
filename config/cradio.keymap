@@ -17,9 +17,10 @@
 #define HRMR(k1,k2,k3,k4) &hm RSHFT k1  &hm RCTRL k2  &hm RALT k3  &hm RGUI k4
 
 #define ____________________TRANSPARENT_____________________ &trans  &trans  &trans  &trans  &trans
-#define __________________TR_TRANSPARENT____________________ &kp ESC  &trans  &trans  &trans  &trans
-#define ________________________RALT________________________ &trans  &caps_word  &kp RCTRL  &kp RALT  &kp RGUI
-#define ________________________LALT________________________ &kp LGUI  &kp LALT  &kp LCTRL  &caps_word  &trans
+#define __________________TL_TRANSPARENT____________________ &kp ESC  &trans  &trans  &caps_word  &trans
+#define __________________TR_TRANSPARENT____________________ &trans  &caps_word  &trans  &trans  &trans
+#define ________________________LALT________________________ &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans
+#define ________________________RALT________________________ &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
@@ -69,7 +70,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESCAPE   │  F7      │  F8      │  F9      │  F12     │   │          │          │          │          │          │
-            &kp ESC    &kp F7     &kp F8     &kp F9     &kp F12        ____________________TRANSPARENT_____________________
+            &kp ESC    &kp F7     &kp F8     &kp F9     &kp F12        __________________TR_TRANSPARENT____________________
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CAPS     │  F4      │  F5      │  F6      │  F11     │   │          │          │          │          │          │
             &kp CAPS   &kp F4     &kp F5     &kp F6     &kp F11        ________________________RALT________________________
@@ -86,7 +87,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │  -       │  7       │  8       │  9       │  \ |     │
-            __________________TR_TRANSPARENT____________________       &kp MINUS  &kp N7     &kp N8     &kp N9     &kp BSLH
+            __________________TL_TRANSPARENT____________________       &kp MINUS  &kp N7     &kp N8     &kp N9     &kp BSLH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  = +     │  4       │  5       │  6       │  '       │
             ________________________LALT________________________       &kp EQUAL  &kp N4     &kp N5     &kp N6     &kp SQT
@@ -104,7 +105,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESCAPE   │          │  {       │  }       │  |       │   │          │          │          │          │          │
-            &kp ESC    &trans     &kp LBRC   &kp RBRC   &kp PIPE       ____________________TRANSPARENT_____________________
+            &kp ESC    &trans     &kp LBRC   &kp RBRC   &kp PIPE       __________________TR_TRANSPARENT____________________
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │  (       │  )       │  `       │   │          │          │          │          │          │
             &trans     &trans     &kp LPAR   &kp RPAR   &kp GRAVE      ________________________RALT________________________
@@ -121,7 +122,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │  INSERT  │  PREV    │  PLAY    │  NEXT    │  VOL UP  │
-            __________________TR_TRANSPARENT____________________       &kp INS   &kp C_PREV  &kp C_PP  &kp C_NEXT &kp C_VOL_UP
+            __________________TL_TRANSPARENT____________________       &kp INS   &kp C_PREV  &kp C_PP  &kp C_NEXT &kp C_VOL_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │  VOL DOWN│
             ________________________LALT________________________       &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT &kp C_VOL_DN
