@@ -90,8 +90,8 @@
         //│          │          │          │          │          │   │  = +     │  4       │  5       │  6       │  '       │
             ________________________LALT________________________       &kp EQUAL  &kp N4     &kp N5     &kp N6     &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ ESCAPE   │          │          │          │  ~       │   │  0       │  1       │  2       │  3       │  -       │
-            &kp ESC    &trans     &trans     &trans     &kp TILDE      &kp N0     &kp N1     &kp N2     &kp N3     &kp MINUS
+        //│ ESCAPE   │          │          │          │  `       │   │  0       │  1       │  2       │  3       │  -       │
+            &kp ESC    &trans     &trans     &trans     &kp GRAVE      &kp N0     &kp N1     &kp N2     &kp N3     &kp MINUS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │          │   │  DEL     │          │
                                              &trans     &trans         &kp DEL    &trans
@@ -108,8 +108,8 @@
         //│          │          │          │          │          │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │  VOL DOWN│
             ________________________LALT________________________       &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT &kp C_VOL_DN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ ESCAPE   │          │          │          │  ~       │   │  HOME    │  PGDN    │  PGUP    │  END     │  MUTE    │
-            &kp ESC    &trans     &trans     &trans     &kp TILDE      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp C_MUTE
+        //│ ESCAPE   │          │          │          │  `       │   │  HOME    │  PGDN    │  PGUP    │  END     │  MUTE    │
+            &kp ESC    &trans     &trans     &trans     &kp GRAVE      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp C_MUTE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │          │   │  DEL     │          │
                                              &trans     &trans         &kp DEL    &trans
