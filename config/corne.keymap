@@ -98,8 +98,8 @@
         //|          │  ESCAPE  │          │          │          │  `       │        │  0       │  1       │  2       │  3       │  -       |          │
             &trans     &kp ESC    &trans     &trans     &trans     &kp GRAVE           &kp N0     &kp N1     &kp N2     &kp N3     &kp MINUS  &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤        ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 │          │          │          |        |          │          │          │
-                                             &trans     &trans     &trans              &trans     &trans      &trans
+        //                                 │          │          │          |        |  DEL     │          │          │
+                                             &trans     &trans     &trans              &kp DEL     &trans      &trans
         //                                 ╰──────────┴──────────┴──────────╯        ╰──────────┴──────────┴──────────╯
             >;
         };
@@ -116,8 +116,8 @@
         //│          |  ESCAPE  │          │          │          │  `       │        │  HOME    │  PGDN    │  PGUP    │  END     │  MUTE    │          |
             &trans     &kp ESC    &trans     &trans     &trans     &kp GRAVE           &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp C_MUTE &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤        ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-        //                                 │          │          │          |        |          │  DEL     │          │
-                                             &trans     &trans     &trans              &trans     &kp DEL    &trans
+        //                                 │          │          │          |        |  DEL     │          │          │
+                                             &trans     &trans     &trans              &kp DEL    &trans        &trans
         //                                 ╰──────────┴──────────┴──────────╯        ╰──────────┴──────────┴──────────╯
             >;
         };
