@@ -8,9 +8,8 @@
 #define CLMKL 0
 #define FNL   1
 #define NUML  2
-#define BKTL  3
-#define NAVL  4
-#define SETL  5
+#define NAVL  3
+#define SETL  4
 
 // Home row mods macro
 #define HRML(k1,k2,k3,k4) &hm LGUI k1  &hm LALT k2  &hm LCTRL k3  &hm LSHFT k4
@@ -32,7 +31,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -42,7 +41,7 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <NAVL BKTL>;
+            if-layers = <NAVL NUML>;
             then-layer = <SETL>;
         };
     };
@@ -61,7 +60,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │         │  K       │  H       │  , <     │  . >     │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V                &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤         ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                       &lt NAVL ENTER   &lt NUML SPACE    &lt FNL BSPC  &lt BKTL TAB
+                                       &lt NAVL ENTER   &lt NUML SPACE    &lt FNL BSPC  &kp LSHFT
         //                                 ╰──────────┴──────────╯         ╰──────────┴──────────╯
             >;
         };
@@ -86,14 +85,14 @@
         num_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │  -       │  7       │  8       │  9       │  \ |     │
-            __________________TL_TRANSPARENT____________________       &kp MINUS  &kp N7     &kp N8     &kp N9     &kp BSLH
+        //│  (       │  )       │  [       │  ]       │   TAB    │   │  -       │  7       │  8       │  9       │  \ |     │
+            &kp LPAR   &kp RPAR   &kp LBKT   &kp RBKT   &kp TAB        &kp MINUS  &kp N7     &kp N8     &kp N9     &kp BSLH
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  = +     │  4       │  5       │  6       │  '       │
             ________________________LALT________________________       &kp EQUAL  &kp N4     &kp N5     &kp N6     &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  0       │  1       │  2       │  3       │  -       │
-            ____________________TRANSPARENT_____________________       &kp N0     &kp N1     &kp N2     &kp N3     &kp MINUS
+        //│ ESCAPE   │          │          │          │  `       │   │  0       │  1       │  2       │  3       │  -       │
+            &kp ESC    &trans     &trans     &trans     &kp GRAVE      &kp N0     &kp N1     &kp N2     &kp N3     &kp MINUS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │          │   │  DEL     │          │
                                              &trans     &trans         &kp DEL    &trans
@@ -101,34 +100,17 @@
             >;
         };
 
-        bracket_layer {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESCAPE   │          │  {       │  }       │  |       │   │          │          │          │          │          │
-            &kp ESC    &trans     &kp LBRC   &kp RBRC   &kp PIPE       __________________TR_TRANSPARENT____________________
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │  (       │  )       │  `       │   │          │          │          │          │          │
-            &trans     &trans     &kp LPAR   &kp RPAR   &kp GRAVE      ________________________RALT________________________
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │  [       │  ]       │  ~       │   │          │          │          │          │          │
-            &trans     &trans     &kp LBKT   &kp RBKT   &kp TILDE      ____________________TRANSPARENT_____________________
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
         nav_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │  INSERT  │  PREV    │  PLAY    │  NEXT    │  VOL UP  │
-            __________________TL_TRANSPARENT____________________       &kp INS   &kp C_PREV  &kp C_PP  &kp C_NEXT &kp C_VOL_UP
+        //│  (       │  )       │  [       │  ]       │   TAB    │   │  INSERT  │  PREV    │  PLAY    │  NEXT    │  VOL UP  │
+            &kp LPAR   &kp RPAR   &kp LBKT   &kp RBKT   &kp TAB        &kp INS   &kp C_PREV  &kp C_PP  &kp C_NEXT &kp C_VOL_UP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  LEFT    │  DOWN    │  UP      │  RIGHT   │  VOL DOWN│
             ________________________LALT________________________       &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT &kp C_VOL_DN
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  HOME    │  PGDN    │  PGUP    │  END     │  MUTE    │
-            ____________________TRANSPARENT_____________________       &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp C_MUTE
+        //│ ESCAPE   │          │          │          │  `       │   │  HOME    │  PGDN    │  PGUP    │  END     │  MUTE    │
+            &kp ESC    &trans     &trans     &trans     &kp GRAVE      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp C_MUTE
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │          │   │  DEL     │          │
                                              &trans     &trans         &kp DEL    &trans
