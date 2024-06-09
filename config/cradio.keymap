@@ -16,9 +16,10 @@
 #define HRMR(k1,k2,k3,k4) &hm RSHFT k1  &hm RCTRL k2  &hm RALT k3  &hm RGUI k4
 
 #define ____________________TRANSPARENT_____________________ &trans  &trans  &trans  &trans  &trans
-#define __________________TR_TRANSPARENT____________________ &kp ESC  &trans  &trans  &trans  &trans
-#define ________________________RALT________________________ &trans  &caps_word  &kp RCTRL  &kp RALT  &kp RGUI
-#define ________________________LALT________________________ &kp LGUI  &kp LALT  &kp LCTRL  &caps_word  &trans
+#define __________________TL_TRANSPARENT____________________ &kp ESC  &trans  &trans  &caps_word  &trans
+#define __________________TR_TRANSPARENT____________________ &trans  &caps_word  &trans  &trans  &trans
+#define ________________________LALT________________________ &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans
+#define ________________________RALT________________________ &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
 
 &caps_word {
     continue-list = <UNDERSCORE MINUS>;
@@ -68,7 +69,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESCAPE   │  F7      │  F8      │  F9      │  F12     │   │          │          │          │          │          │
-            &kp ESC    &kp F7     &kp F8     &kp F9     &kp F12        ____________________TRANSPARENT_____________________
+            &kp ESC    &kp F7     &kp F8     &kp F9     &kp F12        __________________TR_TRANSPARENT____________________
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CAPS     │  F4      │  F5      │  F6      │  F11     │   │          │          │          │          │          │
             &kp CAPS   &kp F4     &kp F5     &kp F6     &kp F11        ________________________RALT________________________
@@ -94,7 +95,7 @@
             &kp ESC    &trans     &trans     &trans     &kp GRAVE      &kp N0     &kp N1     &kp N2     &kp N3     &kp MINUS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 │          │          │   │  DEL     │          │
-                                             &trans     &trans         &kp N0     &trans
+                                             &trans     &trans         &kp DEL    &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
