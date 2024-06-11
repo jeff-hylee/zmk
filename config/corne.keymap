@@ -136,7 +136,7 @@
         //|          │  Z       │  X       │  C       │  V       │  B       │         │  N       │  M       │  , <     │  . >     │ / ?      │          |
             &none      &kp Z      &kp X      &kp C      &kp V      &kp B                &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH   &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┼──────────┤         ├──────────┼──────────┼──────────┼──────────┴──────────┴──────────╯
-                                    &lt SETL LALT  &lt NAVL ENTER   &lt NUML SPACE    &lt FNL BSPC  &kp LSHFT  &kp LGUI
+                                    &to CLMKL  &lt NAVL ENTER   &lt NUML SPACE    &lt FNL BSPC  &kp LSHFT  &kp LGUI
         //                                 ╰──────────┴──────────┴──────────╯         ╰──────────┴──────────┴──────────╯
             >;
         };
