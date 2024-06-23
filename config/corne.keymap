@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #include "includes/settings.dtsi"
-#include "includes/behavious_homerow_mods.dtsi"
+#include "includes/behaviours_homerow_mods.dtsi"
 
 
 #define CLMKL 0
