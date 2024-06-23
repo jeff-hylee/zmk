@@ -9,6 +9,10 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 
+#include "includes/settings.dtsi"
+#include "includes/behavious_homerow_mods.dtsi"
+
+
 #define CLMKL 0
 #define FNL   1
 #define NUML  2
@@ -24,11 +28,6 @@
 #define _________________________TRANSPARENT__________________________ &trans  &trans  &trans  &trans  &trans &trans
 #define _____________________________RALT_____________________________ &trans  &caps_word  &kp RCTRL  &kp RALT  &kp RGUI &trans
 #define _____________________________LALT_____________________________ &trans &kp LGUI  &kp LALT  &kp LCTRL  &caps_word  &trans
-
-&caps_word {
-    continue-list = <UNDERSCORE MINUS>;
-};
-
 
 
 / {
@@ -51,7 +50,6 @@
             then-layer = <SETL>;
         };
     };
-
 
     keymap {
         compatible = "zmk,keymap";
