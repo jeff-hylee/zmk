@@ -1,9 +1,20 @@
 // Copyrighm (c) 2022 The ZMK Contributors
 // SPDX-License-Identifier: MIT
 
+#include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
+
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4
+#define KEYS_T LH2 LH1 LH0 RH0 RH1 RH2
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+
+#include "includes/settings.dtsi"
+#include "includes/behaviours_homerow_mods.dtsi"
+
 
 #define CLMKL 0
 #define FNL   1
@@ -12,8 +23,8 @@
 #define SETL  4
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &hm LGUI k1  &hm LALT k2  &hm LCTRL k3  &hm LSHFT k4
-#define HRMR(k1,k2,k3,k4) &hm RSHFT k1  &hm RCTRL k2  &hm RALT k3  &hm RGUI k4
+#define HRML(k1,k2,k3,k4) &hm_l LGUI k1  &hm_l LALT k2  &hm_l LCTRL k3  &hm_l LSHFT k4
+#define HRMR(k1,k2,k3,k4) &hm_r RSHFT k1  &hm_r RCTRL k2  &hm_r RALT k3  &hm_r RGUI k4
 
 #define ____________________TRANSPARENT_____________________ &trans  &trans  &trans  &trans  &trans
 #define __________________TL_TRANSPARENT____________________ &kp ESC  &trans  &trans  &caps_word  &trans
@@ -21,23 +32,8 @@
 #define ________________________LALT________________________ &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &trans
 #define ________________________RALT________________________ &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS>;
-};
 
 / {
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
